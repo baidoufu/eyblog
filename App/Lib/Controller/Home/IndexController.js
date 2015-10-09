@@ -64,6 +64,13 @@ module.exports = Controller("Home/BaseController", function(){
 				}
 			});			
 		}
+	},
+	//退出登录
+	loginoutAction:function(){
+		var self=this;
+		return self.session().then(function(data){
+			self.redirect("/");
+		});
 	}
   };
 });
