@@ -1,1 +1,3 @@
-## README
+## 博客
+
+依赖 thinkjs
