@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html lang="zh-cn">
+
+<% include head.html %>
+
+ <body>  
+
+<% include menu.html %>
+
+  <div class="admin"> 
+
+
+
+   <form method="post" action="/admin/content/delete"> 
+
+    <div class="panel admin-panel"> 
+
+     <div class="panel-head"> 
+
+      <strong> 分类列表 </strong> 
+
+     </div> 
+
+     <div class="padding border-bottom"> 
+
+      <input type="button" class="button button-small checkall" name="checkall" checkfor="id" value="全选" /> 
+
+      <input type="button" class="button button-small border-green dialogs" value="添加分类" data-toggle="click" data-target="#mydialog" data-mask="1" data-width="30%" />
+     </div>      
+
+     <table class="table table-hover"> 
+
+      <tbody>
+
+       <tr> 
+
+        <th width="60"> 选择 </th> 
+
+        <th width="120"> id </th> 
+
+        <th width="*"> 名称 </th> 
+
+        <th width="100"> 操作 </th> 
+
+       </tr> <% category.forEach(function(v) { %> 
+
+       <tr> 
+
+        <td> <input type="checkbox" name="id" value="<%=v.id%>" /> </td> 
+
+        <td> <%=v.id%> </td> 
+
+        <td> <%=v.name%> </td> 
+
+        <td> <a class="button border-blue button-little" href="#"> 修改 </a> <a class="button border-yellow button-little" href="/admin/content/delete/id/<%=v.id%>" onclick="{if(confirm('确认删除?')){return true;}return false;}"> 删除 </a> </td> 
+
+       </tr> <% }) %> 
+
+      </tbody>
+
+     </table>
+
+    </div> 
+
+   </form> 
+
+  </div>  
+
+  <div id="mydialog"> 
+    <div class="dialog fadein-top"> 
+      <div class="dialog-head"> 
+        <span class="close rotate-hover"> 
+        </span> 
+        <strong>添加分类</strong> 
+      </div> 
+      <div class="dialog-body">
+        <input type="text" class="input" name="category" placeholder="请输入分类名称" />
+      </div> 
+      <div class="dialog-foot"> 
+        <button class="button dialog-close">取消</button> 
+        <button class="button bg-green">确认</button>
+      </div>
+    </div>
+  </div>
+
+ </body>
+
+</html>

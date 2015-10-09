@@ -1,0 +1,32 @@
+				<div class="border-left  padding-big-left">
+					<form method="post" action="/search">
+						<input type="text" name="keyword" class="input radius-none" placeholder="search" />
+					</form>
+					<div class="padding-large-top">
+						<div class="e_left_title">最新文章</div>
+						<ul class="list-group">
+						<%newList.forEach(function(data){%>
+						<li><a href="/page/<%=data.id%>.html"><%=data.title%></a></li> 
+						<%})%>
+						</ul>						
+					</div>
+
+					<div class="padding-large-top">
+						<div class="e_left_title">分类</div>
+						<ul class="list-group">
+						<%cateList.forEach(function(data){%>
+						<li><a href="/cate/<%=data.id%>"><%=data.name%></a></li> 
+						<%})%>
+						</ul>						
+					</div>						
+
+					<div class="padding-large-top">
+						<div class="e_left_title">标签</div>
+						<ul class="list-group">
+						<%tagList.forEach(function(data){%>
+						<li><a href="/tag/<%=data.id%>"><%=data.name%></a></li> 
+						<%})%>
+						</ul>						
+					</div>	
+
+				</div>

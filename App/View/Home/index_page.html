@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<%include header.html%>
+
+	<body>
+		<div class="container">
+			<%include menu.html%>
+			
+			 <div class="xs7 xm9">
+			 	<div class="padding-large-top padding-big-bottom">
+			 		<h2 class="e_title"><a href="<%=data.id%>"><%=data.title%></a></h2>
+			 		<div class="margin-top e_date"><%=data.time%></div>
+			 		<p class="margin-big-top height"><%-data.text%></p>
+			 	</div>	 
+			<hr/>
+			</div> 
+			 <div class="xs5 xm3 padding-large-top padding-big-bottom">
+			<%include sidebar.html%>
+			 </div>
+		</div>
+	<%include footer.html%>
+	</body>
+
+</html>

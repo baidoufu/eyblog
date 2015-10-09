@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<%include header.html%>
+	<body>
+		<div class="container">
+			<%include menu.html%>
+			 <div class="xs7 xm9">
+			 <%list.data.forEach(function(data){%>
+			 	<div class="padding-large-top padding-big-bottom">
+			 		<h2 class="e_title"><a href="/page/<%=data.id%>.html"><%=data.title%></a></h2>
+			 		<div class="margin-top e_date"><%=data.time%></div>
+			 		<p class="margin-big-top height"><%=data.abscontent%></p>
+			 	</div>	 
+			<%})%>
+			<hr/>
+			 <%if(list.page>0 && list.page<=list.total){%>
+			<ul class="pager clearfix padding-big-top"> 
+				<%if(list.page>1 && list.page<=list.total){%>
+				<li class="float-left"><a href="/p/<%=list.page-1%>">上一页</a></li> 
+				<%}%>
+				<%if(list.page>0 && list.page<list.total){%>
+				<li class="float-right"><a href="/p/<%=list.page+1%>">下一页</a></li> </ul>
+				<%}%>
+			 <%}%>
+			 </div> 
+			 <div class="xs5 xm3 padding-large-top padding-big-bottom">
+			 <%include sidebar.html%>
+			 </div>
+		</div>
+	<%include footer.html%>	
+	</body>
+
+</html>
