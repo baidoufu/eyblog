@@ -17,7 +17,11 @@ module.exports = Controller(function(){
     	//最新文章
     	D('Contents').getNew(10).then(function(data){
     		self.assign("newList",data);
-    	})
+    	});
+      //网站配置
+      D('web').getOne().then(function(data){
+        self.assign("_web",data);
+      });
       	self.super("init", http);
     },
   }

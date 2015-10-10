@@ -4,7 +4,7 @@ module.exports = Model(function(){
         //获取标签列表
         getList:function(){
             var self=this;
-            return D('Tags').where({tid:1}).select().then(function(data){
+            return self.where({tid:1}).select().then(function(data){
                 return data;
             });
         }

@@ -36,7 +36,14 @@ module.exports = Model(function(){
                 ispage:1
             };
             var nums=nums?nums:5;
-            return D('Contents').where(map).field('id,title').order('id desc').limit(nums).select().then(function(data){
+            return self.where(map).field('id,title').order('id desc').limit(nums).select().then(function(data){
+                return data;
+            });
+        },
+        //获取文章总数
+        getCount:function(){
+            var self=this;
+            return self.count().then(function(data){
                 return data;
             });
         }
