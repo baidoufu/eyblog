@@ -8,7 +8,8 @@ module.exports = Controller("Admin/BaseController", function(){
 		indexAction:function(){
 			var self=this;
 			self.assign("model","system");
-			self.assign("action","index");			
+			self.assign("action","index");
+			//网站配置			
 			self.display();
 		},
 	};
