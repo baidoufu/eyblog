@@ -46,10 +46,12 @@ module.exports = Controller("Home/BaseController", function(){
 	//登录
 	loginAction:function(){	
 		var self=this;
-		self.assign('title',"登录到后台");
 		//处理
-		if(self.isGet()){
-			return self.display();
+		if(self.isGet()){	
+			self.assign('title',"登录到后台");		
+			D('web').getOne().then(function(){
+				return self.display();
+			});	
 		}else{
 			var map={
 				user:self.post('user'),
@@ -59,7 +61,7 @@ module.exports = Controller("Home/BaseController", function(){
 				if(data){						//成功
 					self.session('userInfo',data);
 					self.redirect("/admin");
-				}else{							//失败
+				}else{							//失败				
 					self.redirect("/login");
 				}
 			});			

@@ -6,6 +6,6 @@ module.exports = {
   db_port: '', // 端口
   db_name: 'ey', // 数据库名
   db_user: 'root', // 用户名
-  db_pwd: '', // 密码
+  db_pwd: '123456', // 密码
   db_prefix: 'ey_', // 数据库表前缀
 };
