@@ -1,7 +1,8 @@
   <link rel="stylesheet" href="/resource/editor/css/editor.css">
+  <link rel="stylesheet" href="/resource/highlightJS/styles/github.css">
   <script src="/resource/editor/js/editor.js"></script>
   <script src="/resource/plupload/plupload.full.min.js"></script>
-
+  <script src="/resource/highlightJS/highlight.pack.js"></script>
   <div id="uploadContainer">
   	<input type="button" value="选择文件" id="btnBrowse"/>
   	<input type="button" value="上传文件" id="btnUpload">
@@ -9,6 +10,10 @@
   </div>
   <script>
   	$(function(){
+        //代码高亮
+        $('pre code').each(function(i, block) {
+                hljs.highlightBlock(block);
+        });      
         //获取dom节点
         var $uploadContainer = $('#uploadContainer'),
         $fileList = $('#fileList'),
