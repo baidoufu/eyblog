@@ -14,6 +14,10 @@ module.exports = Model(function(){
             return self.count().then(function(data){
                 return data;
             });        	
+        },
+        //获取最新心情
+        getNew:function(nums){
+
         }
     }
 })

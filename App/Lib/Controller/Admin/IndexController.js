@@ -20,7 +20,9 @@ module.exports = Controller("Admin/BaseController", function(){
 				self.assign('comment',comment);
 				//PV
 				var pv=D('web').getPV();
-				self.assign('pv',pv);												
+				self.assign('pv',pv);
+				//最新心情
+				var newmood=D('moods').getNew(1);										
 				self.display();
 			}
 		};

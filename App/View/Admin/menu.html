@@ -14,35 +14,28 @@
 
      <ul class="nav nav-inline admin-nav"> 
 
-      <li<%if(model=="index"){%> class="active"<%}%>> <a href="/admin/index.html" class="icon-home"> 开始 </a> 
+      <li<%if(model=="index"){%> class="active"<%}%>> <a href="/admin/index" class="icon-home"> 开始 </a> 
 
        <ul> 
 
-        <li> <a href="/admin/system.html"> 系统设置 </a> </li> 
+        <li> <a href="/admin/system"> 系统设置 </a> </li> 
 
-        <li> <a href="/admin/content.html"> 内容管理 </a> </li> 
+        <li> <a href="/admin/content"> 内容管理 </a> </li> 
 
-        <li> <a href="#"> 订单管理 </a> </li> 
+        <li> <a href="/admin/content/add"> 添加内容 </a> </li> 
 
-        <li class="active"> <a href="#"> 会员管理 </a> </li> 
+       <li> <a href="/admin/content/cate"> 分类设置 </a> </li> 
 
-        <li> <a href="#"> 文件管理 </a> </li> 
+        <li> <a href="/admin/content/tag"> 标签设置 </a> </li> 
 
-        <li> <a href="#"> 栏目管理 </a> </li> 
 
        </ul> </li> 
 
-      <li<%if(model=="system"){%> class="active"<%}%>> <a href="/admin/system.html" class="icon-cog"> 系统 </a> 
+      <li<%if(model=="system"){%> class="active"<%}%>> <a href="/admin/system" class="icon-cog"> 系统 </a> 
 
        <ul> 
 
-        <li> <a href="#"> 全局设置 </a> </li> 
-
-        <li class="active"> <a href="#"> 系统设置 </a> </li> 
-
-        <li> <a href="#"> 会员设置 </a> </li> 
-
-        <li> <a href="#"> 积分设置 </a> </li> 
+        <li class="active"> <a href="/admin/system/index"> 系统设置 </a> </li> 
 
        </ul> </li> 
 
