@@ -1,25 +1,57 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
-
 <%include header.html%>
+	<body class=" e-body">
+		<div class="container-layout e-content">
+			<div class="line-big">
+				<%include menu.html%>
+				<div class="xs6 xm9 bg" id="content">
+					<div class="margin-large">
 
-	<body>
-		<div class="container">
-			<%include menu.html%>
-			
-			 <div class="xs7 xm9">
-			 	<div class="padding-large-top padding-big-bottom">
-			 		<h2 class="e_title"><a href="<%=data.id%>"><%=data.title%></a></h2>
-			 		<div class="margin-top e_date"><%=data.time%></div>
-			 		<p class="margin-big-top height"><%-data.text%></p>
-			 	</div>	 
-			<hr/>
-			</div> 
-			 <div class="xs5 xm3 padding-large-top padding-big-bottom">
-			<%include sidebar.html%>
-			 </div>
+						<div class="article">
+							<div class="article-meta">
+								<a href="http://printf.cn/index.php/archives/92/" class="article-date">
+									<time datetime="2015-10-19T15:57:00.000Z" itemprop="datePublished"><%=data.d%> <br><%=data.m%></time>
+								</a>
+								<ul class="list-unstyle heigh">
+									<li>
+										<i class="icon-tag"></i><a class="article-tag-list-link" href="<%=_web.url%>/tag/<%=data.tid%>"><%=data.tag%></a>
+									</li>
+								</ul>
+							</div>
+							<div class="article-inner">
+								<input class="isFancy" type="hidden">
+								<header class="article-header">
+									<h1 itemprop="name">
+            						<a class="article-title" href="<%=_web.url%>/page/<%=data.id%>.html"><%=data.title%> </a>
+          							</h1>
+								</header>
+								<div class="article-entry" itemprop="articleBody">
+									<p>
+										<%-data.text%>
+									</p>
+								</div>
+								<footer class="article-footer"> </footer>
+							</div>
+						</div>
+						<div class="article">
+						<div class="ds-thread" data-thread-key="<%=data.id%>" data-title="<%=data.title%>" data-url="<%=_web.url%>/page/<%=data.id%>.html"></div>
+						</div>
+					<script type="text/javascript">
+					var duoshuoQuery = {short_name:"easyous"};
+						(function() {
+							var ds = document.createElement('script');
+							ds.type = 'text/javascript';ds.async = true;
+							ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+							ds.charset = 'UTF-8';
+							(document.getElementsByTagName('head')[0] 
+							 || document.getElementsByTagName('body')[0]).appendChild(ds);
+						})();
+						</script>
+					</div>
+				</div>
+			</div>
 		</div>
-	<%include footer.html%>
 	</body>
 
 </html>

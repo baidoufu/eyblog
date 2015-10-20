@@ -12,15 +12,15 @@ module.exports = Controller("Home/BaseController", function(){
 		var map={};
 		map.status=1;
 		if(self.post('keyword')){				//关键词
-			map.title=['like','%'+self.post('keyword')+'%'];
+			map={'ey_contents.title':['like','%'+self.post('keyword')+'%']};
 			self.assign('title',"搜索");
 		}
 		if(self.get('tag')){					//标签
-			map.tid=self.get('tag');
+			map={'ey_contents.tid':self.get('tag')};
 			self.assign('title',"标签");
 		}
 		if(self.get('cate')){					//分类
-			map.cid=self.get('cate');
+			map={'ey_contents.cid':self.get('cate')};
 			self.assign('title',"分类");
 		}		
 		map.ispage=1;
@@ -32,7 +32,7 @@ module.exports = Controller("Home/BaseController", function(){
 	pageAction:function(){
 		var self=this;
 		var map={
-			id:self.get('id'),
+			'ey_contents.id':self.get('id'),
 			//ispage:1,
 			status:1,
 		};
@@ -40,7 +40,7 @@ module.exports = Controller("Home/BaseController", function(){
 			self.assign("title",rs.title);		//页面标题
 			return rs;
 		});
-		self.assign('data',data);
+		self.assign('data',data);		
 		self.display();
 	},
 	//登录

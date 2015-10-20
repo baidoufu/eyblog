@@ -2,9 +2,12 @@
 module.exports = Model(function(){
     return {
         //获取心情列表
-        getList:function(){
+        getList:function(page){
             var self=this;
-            return self.select().then(function(data){
+            return self
+                .page(page,5)
+                .countSelect()
+                .then(function(data){
                 return data;
             });
         },
@@ -17,7 +20,10 @@ module.exports = Model(function(){
         },
         //获取最新心情
         getNew:function(nums){
-
+            var self=this;
+            return self.find().then(function(data){
+                return data;
+            });
         }
     }
 })

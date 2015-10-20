@@ -499,5 +499,6 @@ $(function(){
 		});
 
 	});
-
+    //设置div高度
+    $("#content").height($(window).height());
 })

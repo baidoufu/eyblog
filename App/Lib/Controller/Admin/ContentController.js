@@ -24,7 +24,7 @@ module.exports = Controller("Admin/BaseController", function(){
 				var cate=self.getCategory();
 				if(self.get('id')){
 					//编辑状态查询文章详情
-					var content=D('Contents').getOne({id:self.get('id')}).then(function(data){
+					var content=D('Contents').getOne({'ey_contents.id':self.get('id')}).then(function(data){
 						self.assign('content',data);
 					});
 					var promiseList=[tag,cate,content];

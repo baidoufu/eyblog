@@ -6,23 +6,15 @@ module.exports = Controller(function(){
   return {
     init: function(http){				//初始化
     	var self=this;
-    	//获取标签
-    	D('Tags').getList().then(function(data){
-    		self.assign("tagList", data);
-    	});
-    	//获取分类
-    	D('Categorys').getList().then(function(data){
-    		self.assign("cateList",data);
-    	});
-    	//最新文章
-    	D('Contents').getNew(10).then(function(data){
-    		self.assign("newList",data);
-    	});
-      //网站配置
-      D('web').getOne().then(function(data){
-        self.assign("_web",data);
+      //最新心情
+      D("Moods").getNew().then(function(data){
+        self.assign("newMood",data);
       });
-      	self.super("init", http);
-    },
+    	//网站配置
+    	D("Web").getOne().then(function(data){
+    		self.assign("_web",data);
+    	});
+      self.super("init", http);
+    }
   }
 })
