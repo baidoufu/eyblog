@@ -1188,11 +1188,11 @@ form .form-group:last-child{padding-bottom:0;}
 .article-entry {
     line-height: 2;
     padding-right: 93px;
-}
-.article-entry p{
+    padding-top:50px;
 	margin-top: 10px;
 	color: #666;
 	line-height: 25px;
+	overflow: auto;    
 }
 .article-tag-list-link {
     color: #999;
@@ -1215,4 +1215,9 @@ form .form-group:last-child{padding-bottom:0;}
 }
 a:hover{
 	color: #666;
+}
+.pager-prev, .pager .pager-prev, .pager-next, .pager .pager-next {
+    color: #666;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid #CBCBCB;
 }

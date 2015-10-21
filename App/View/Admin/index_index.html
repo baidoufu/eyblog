@@ -67,17 +67,15 @@
 
 
      <div class="alert" style="height: 228px;"> 
-
-      <h4> 心情 </h4> 
-
-      <p class="text-gray padding-top"> 拼图是优秀的响应式前端CSS框架，国内前端框架先驱及领导者，自动适应手机、平板、电脑等设备，让前端开发像游戏般快乐、简单、灵活、便捷。 </p> 
-
-      <a target="_blank" class="button bg-dot icon-code" href="pintuer2.zip"> 下载示例代码 </a> 
-
-      <a target="_blank" class="button bg-main icon-download" href="http://www.pintuer.com/pintuer.zip"> 下载拼图框架 </a> 
-
-      <a target="_blank" class="button border-main icon-file" href="http://www.pintuer.com/"> 拼图使用教程 </a> 
-
+          <div class="panel"> 
+            <div class="panel-head">发表心情</div> 
+            <form action="/admin/mood/add" method="post">
+            <div class="panel-body">
+              <input type="text" class="input" name="mood" />
+              <button class="button bg-main margin-top">发表</button>
+            </div>
+            </form>
+           </div>
      </div> 
 
      <div class="panel"> 

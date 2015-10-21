@@ -42,9 +42,11 @@ module.exports = Controller("Admin/BaseController", function(){
 				data.cid=self.post('category');
 				data.tid=self.post('tag');
 				data.text=self.post('content');
+				data.abscontent=subStr(removeTag(self.post('content')),200);
 				data.status=self.post('status')||0;
 				data.iscomment=self.post('iscomment')||0;
 				data.time=time();
+				console.log(data);
 				return self.session('userInfo').then(function(user){
 					data.uid=user.id;
 					if(self.post('id')){
@@ -118,6 +120,20 @@ module.exports = Controller("Admin/BaseController", function(){
 			}else{						//处理数据
 
 			}						
-		}
+		},
+		moodAction:function(){			//标签管理
+			var self=this;
+			self.assign("model","content");
+			self.assign("action","mood");
+			if(self.isGet()){			//get请求渲染模板
+				var tag=self.getTag();
+				var page=self.get('page')?self.get('page'):1;
+				var data=D('Moods').getList(page);
+				self.assign("list",data);				
+				self.display();
+			}else{						//处理数据
+
+			}						
+		}		
 	};
 });
