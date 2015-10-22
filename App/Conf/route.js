@@ -8,4 +8,5 @@ module.exports = [
 	["cate/:cate", "index/index"],
 	["tag/:tag", "index/index"],
 	["about", "index/page?id=1"],
+	["archives","index/archives"]
 ]

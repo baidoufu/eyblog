@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<%include header.html%>
+	<body class=" e-body">
+		<div class="container-layout e-content">
+			<div class="line-big">
+				<%include menu.html%>
+				<div class="xs6 xm9 bg" id="content">
+					<div class="margin-large">
+
+						<div class="article margin-large">
+ 							<ul class="list-media list-underline"> 
+ 							<%data.forEach(function(v){%>
+ 							<li> 
+ 								<span class="float-right margin-big-top text-gray text-small"><%=v.time%></span> 
+ 								<h2><a href="<%=_web.url%>/page/<%=v.id%>.html"><%=v.title%></a></h2>
+ 							</li>
+							<%})%>
+ 							</ul> 
+						</div>
+
+						<div class="article">
+						<div class="ds-thread" data-thread-key="<%=data.id%>" data-title="<%=data.title%>" data-url="<%=_web.url%>/page/<%=data.id%>.html"></div>
+						</div>
+
+					<script type="text/javascript">
+					var duoshuoQuery = {short_name:"easyous"};
+						(function() {
+							var ds = document.createElement('script');
+							ds.type = 'text/javascript';ds.async = true;
+							ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+							ds.charset = 'UTF-8';
+							(document.getElementsByTagName('head')[0] 
+							 || document.getElementsByTagName('body')[0]).appendChild(ds);
+						})();
+						</script>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>

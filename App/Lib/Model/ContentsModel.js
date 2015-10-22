@@ -4,7 +4,6 @@ module.exports = Model(function() {
         // 获取文章列表
         getList: function(map, page) {
             var self = this;
-            var newDate = new Date();
             return self.where(map)
                 .page(page, 10)
                 .join("ey_users ON ey_contents.uid=ey_users.id")
@@ -13,12 +12,12 @@ module.exports = Model(function() {
                 .order("ey_contents.id desc")
                 .countSelect()
                 .then(function(data) {
-                    console.log(data)
                     //日期处理
                     for (var k in data['data']) {
+                        data['data'][k]['m'] = formatDate("m", data['data'][k]['time']);
+                        data['data'][k]['d'] = formatDate("d", data['data'][k]['time']);                        
                         data['data'][k]['time'] = formatDate("y-m-d h:i:s", data['data'][k]['time']);
-                        newDate.setTime(parseInt(data['data'][k]['time']) * 1000);
-                        data['data'][k]['date'] = newDate.toDateString();
+                        console.log(data)
                     }
                     return data;
                 });
