@@ -99,6 +99,14 @@ module.exports = Controller("Home/BaseController", function() {
 			return self.session().then(function(data) {
 				self.redirect("/");
 			});
+		},
+		//error页面
+		errorAction:function(){
+			var self=this;
+			self.assign("title","404");
+			D('web').getOne().then(function() {
+				return self.display();
+			});			
 		}
 	};
 });
