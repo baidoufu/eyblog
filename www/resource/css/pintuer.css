@@ -1225,3 +1225,11 @@ time span{
 	margin-bottom: 5px;
 	font-size: 30px;
 }
+.e-tag{
+	font-size: 100%;
+	background: #333;
+}
+.e-tag:hover{
+	color: #fff;
+	background: #555;
+}
