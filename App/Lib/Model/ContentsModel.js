@@ -5,7 +5,7 @@ module.exports = Model(function() {
         getList: function(map, page) {
             var self = this;
             return self.where(map)
-                .page(page, 10)
+                .page(page, 6)
                 .join("ey_users ON ey_contents.uid=ey_users.id")
                 .join("ey_tags ON ey_contents.tid=ey_tags.id")
                 .field("ey_contents.*,ey_users.user,ey_users.img,ey_tags.name as tag")

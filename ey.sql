@@ -1,11 +1,4 @@
--- phpMyAdmin SQL Dump
--- version 3.3.7
--- http://www.phpmyadmin.net
---
--- 主机: localhost
--- 生成日期: 2015 年 10 月 21 日 09:55
--- 服务器版本: 5.0.90
--- PHP 版本: 5.2.14
+
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 
@@ -233,4 +226,4 @@ CREATE TABLE IF NOT EXISTS `ey_web` (
 --
 
 INSERT INTO `ey_web` (`id`, `title`, `keyword`, `description`, `pv`, `url`) VALUES
-(1, 'easyou', 'easyou', 'easyou大萌', 0, 'http://localhost:8360');
+(1, 'easyou', 'easyou', 'easyou大萌', 0, '');

@@ -28,7 +28,7 @@ module.exports = Model(function(){
         //获取最新心情
         getNew:function(nums){
             var self=this;
-            return self.find().then(function(data){
+            return self.order("time desc").find().then(function(data){
                 return data;
             });
         }

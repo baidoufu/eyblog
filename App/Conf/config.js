@@ -6,7 +6,7 @@ module.exports = {
   db_port: '', // 端口
   db_name: 'ey', // 数据库名
   db_user: 'root', // 用户名
-  db_pwd: '123456', // 密码
+  db_pwd: '', // 密码
   db_prefix: 'ey_', // 数据库表前缀
   post_max_file_size: 1024 * 1024 * 1024, // 上传文件大小限制，默认 1G
   post_max_fields: 100, // 最大表单数，默认为 100
