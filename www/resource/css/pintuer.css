@@ -1079,7 +1079,6 @@ a:focus,a:hover{color:#09c;} /*链接-悬浮颜色*/
 {color:#fff;border-color:#f00;background-color:#f00;} /*点缀色-文本-边框-背景*/
 
 
-body{background-color:#f2f9fd;}
 .panel{background:#fff;}
 form .form-group:last-child{padding-bottom:0;}
 .passcode{position:absolute;right:0;top:0;height:32px;margin:1px;border-left:solid 1px #ddd;text-align:center;line-height:32px;border-radius:0 4px 4px 0;}
@@ -1232,4 +1231,7 @@ time span{
 .e-tag:hover{
 	color: #fff;
 	background: #555;
+}
+.bg{
+	background: #EAEAEA;
 }
