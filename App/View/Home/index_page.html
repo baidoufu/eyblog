@@ -6,12 +6,14 @@
 			<div class="line-big">
 				<%include menu.html%>
 				<div class="xs6 xm9 bg" id="content">
-					<div class="margin-large">
-
+					<div class="margin-large" style="min-height: 700px;">
 						<div class="article">
 							<div class="article-meta">
-								<a href="http://printf.cn/index.php/archives/92/" class="article-date">
-									<time datetime="2015-10-19T15:57:00.000Z" itemprop="datePublished"><%=data.d%> <br><%=data.m%></time>
+								<a href="<%=_web.url%>/page/<%=data.id%>.html" class="article-date">
+									<time datetime="2015-10-19T15:57:00.000Z" itemprop="datePublished">
+										<span class="padding-top"><%=data.d%></span>
+										<p class="text-small"><%=data.m%></p>
+									</time>
 								</a>
 								<ul class="list-unstyle heigh">
 									<li>
@@ -34,22 +36,25 @@
 								<footer class="article-footer"> </footer>
 							</div>
 						</div>
+						<%if(data.iscomment=="1"){%>
 						<div class="article">
 						<div class="ds-thread" data-thread-key="<%=data.id%>" data-title="<%=data.title%>" data-url="<%=_web.url%>/page/<%=data.id%>.html"></div>
 						</div>
-					<script type="text/javascript">
-					var duoshuoQuery = {short_name:"easyous"};
-						(function() {
-							var ds = document.createElement('script');
-							ds.type = 'text/javascript';ds.async = true;
-							ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-							ds.charset = 'UTF-8';
-							(document.getElementsByTagName('head')[0] 
-							 || document.getElementsByTagName('body')[0]).appendChild(ds);
-						})();
+						<script type="text/javascript">
+						var duoshuoQuery = {short_name:"eyblog"};
+							(function() {
+								var ds = document.createElement('script');
+								ds.type = 'text/javascript';ds.async = true;
+								ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+								ds.charset = 'UTF-8';
+								(document.getElementsByTagName('head')[0] 
+								 || document.getElementsByTagName('body')[0]).appendChild(ds);
+							})();
 						</script>
 					</div>
+					<%}%>
 				</div>
+				<%include footer.html%>
 			</div>
 		</div>
 	</body>

@@ -46,11 +46,13 @@
 
         <th width="60">   选择  </th> 
 
+        <th width="120">  ID  </th>
+
         <th width="120">  作者  </th> 
 
         <th width="*">    名称  </th> 
 
-        <th width="150">  时间  </th> 
+        <th width="180">  时间  </th> 
 
         <th width="100">  操作  </th> 
 
@@ -58,7 +60,9 @@
 
       <tr> 
 
-        <td> <input type="checkbox" name="id" value="<%=v.id%>" /> </td> 
+        <td> <input type="checkbox" name="id" value="<%=v.id%>" /> </td>
+
+        <td> <%=v.id%> </td>  
 
         <td> <%=v.user%> </td> 
 

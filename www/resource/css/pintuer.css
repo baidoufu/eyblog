@@ -1079,7 +1079,6 @@ a:focus,a:hover{color:#09c;} /*链接-悬浮颜色*/
 {color:#fff;border-color:#f00;background-color:#f00;} /*点缀色-文本-边框-背景*/
 
 
-body{background-color:#f2f9fd;}
 .panel{background:#fff;}
 form .form-group:last-child{padding-bottom:0;}
 .passcode{position:absolute;right:0;top:0;height:32px;margin:1px;border-left:solid 1px #ddd;text-align:center;line-height:32px;border-radius:0 4px 4px 0;}
@@ -1188,11 +1187,11 @@ form .form-group:last-child{padding-bottom:0;}
 .article-entry {
     line-height: 2;
     padding-right: 93px;
-}
-.article-entry p{
+    padding-top:50px;
 	margin-top: 10px;
 	color: #666;
 	line-height: 25px;
+	overflow: auto;    
 }
 .article-tag-list-link {
     color: #999;
@@ -1215,4 +1214,24 @@ form .form-group:last-child{padding-bottom:0;}
 }
 a:hover{
 	color: #666;
+}
+.pager-prev, .pager .pager-prev, .pager-next, .pager .pager-next {
+    color: #666;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid #CBCBCB;
+}
+time span{
+	margin-bottom: 5px;
+	font-size: 30px;
+}
+.e-tag{
+	font-size: 100%;
+	background: #333;
+}
+.e-tag:hover{
+	color: #fff;
+	background: #555;
+}
+.bg{
+	background: #EAEAEA;
 }

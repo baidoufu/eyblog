@@ -6,13 +6,15 @@
 			<div class="line-big">
 				<%include menu.html%>
 				<div class="xs6 xm9 bg" id="content">
-					<div class="margin-large">
-
+					<div class="margin-large" style="min-height: 700px;">
 						 <%list.data.forEach(function(data){%>
 						<div class="article">
 							<div class="article-meta">
-								<a href="http://printf.cn/index.php/archives/92/" class="article-date">
-									<time datetime="2015-10-19T15:57:00.000Z" itemprop="datePublished"><%=data.date%></time>
+								<a href="<%=_web.url%>/page/<%=data.id%>.html" class="article-date">
+									<time datetime="2015-10-19T15:57:00.000Z" itemprop="datePublished">
+										<span class="padding-top"><%=data.d%></span>
+										<p class="text-small"><%=data.m%></p>
+									</time>
 								</a>
 								<ul class="list-unstyle heigh">
 									<li>
@@ -32,14 +34,27 @@
 										<%=data.abscontent%>
 									</p>
 									<p class="article-more-link">
-										<a href="<%=_web.url%>/page/<%=data.id%>.html" class="tag bg-gra">more &gt;&gt;</a>
+										<a href="<%=_web.url%>/page/<%=data.id%>.html" class="tag bg-gra e-tag">more &gt;&gt;</a>
 									</p>
 								</div>
 								<footer class="article-footer"> </footer>
 							</div>
 						</div>
 						<%})%>
+						<div class="margin-large">
+							<ul class="pager clearfix">
+								<%if(list.page>=1 && list.page<=list.total){%>
+								<%if(list.page>1){%>
+								<li class="float-left"><a class="pager-prev icon-angle-left" href="<%=_web.url%>/p/<%=list.page-1%>"></a></li> 
+								<%}%>
+								<%if(list.page<list.total){%>
+								<li class="float-right"><a class="pager-next icon-angle-right" href="<%=_web.url%>/p/<%=list.page+1%>"></a></li>
+								<%}%>
+								<%}%>
+							</ul>
+						</div>						
 					</div>
+					<%include footer.html%>
 				</div>
 			</div>
 		</div>

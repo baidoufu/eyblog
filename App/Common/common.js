@@ -2,40 +2,70 @@
 /*****项目函数库*******/
 
 //时间戳格式化
-global.formatDate=function (formatStr, fdate){
-	var fTime, fStr = 'ymdhis';
-	if (!formatStr){
-		formatStr= "y-m-d h:i:s";
+global.formatDate = function(formatStr, fdate) {
+		var fTime, fStr = 'ymdhis';
+		if (!formatStr) {
+			formatStr = "y-m-d h:i:s";
+		}
+		if (fdate) {
+			fTime = new Date(parseInt(fdate) * 1000); //10位数时间戳
+		} else {
+			fTime = new Date();
+		}
+		var formatArr = [
+			fTime.getFullYear().toString(), (fTime.getMonth() + 1).toString(),
+			fTime.getDate().toString(),
+			fTime.getHours().toString(),
+			fTime.getMinutes().toString(),
+			fTime.getSeconds().toString()
+		]
+		for (var i = 0; i < formatArr.length; i++) {
+			formatStr = formatStr.replace(fStr.charAt(i), formatArr[i]);
+		}
+		return formatStr;
 	}
-	if (fdate){
-		fTime = new Date(parseInt(fdate)*1000);	//10位数时间戳
+	//获取10位数时间戳
+global.time = function(str) {
+		var date;
+		if (str) {
+			date = new Date(Date.parse(str.replace(/-/g, "/")));
+			date = (date.getTime()) / 1000;
+		} else {
+			date = (new Date().getTime()) / 1000
+		}
+
+		return parseInt(date);
 	}
-	else{
-		fTime = new Date();
+	//中文字符串截取
+global.subStr = function(str, len, hasDot) {
+	var newLength = 0;
+	var newStr = "";
+	var chineseRegex = /[^\x00-\xff]/g;
+	var singleChar = "";
+	var strLength = str.replace(chineseRegex, "**").length;
+	for (var i = 0; i < strLength; i++) {
+		singleChar = str.charAt(i).toString();
+		if (singleChar.match(chineseRegex) != null) {
+			newLength += 2;
+		} else {
+			newLength++;
+		}
+		if (newLength > len) {
+			break;
+		}
+		newStr += singleChar;
 	}
-	var formatArr = [
-	fTime.getFullYear().toString(),
-	(fTime.getMonth()+1).toString(),
-	fTime.getDate().toString(),
-	fTime.getHours().toString(),
-	fTime.getMinutes().toString(),
-	fTime.getSeconds().toString()
-	]
-	for (var i=0; i<formatArr.length;i++)
-	{
-		formatStr = formatStr.replace(fStr.charAt(i), formatArr[i]);
+
+	if (hasDot && strLength > len) {
+		newStr += "...";
 	}
-	return formatStr;
+	return newStr;
 }
-//获取10位数时间戳
-global.time=function(str){
-	var date;
-	if(str){
-	    date = new Date(Date.parse(str.replace(/-/g, "/")));
-	    date = (date.getTime())/1000;
-	}else{
-		date=(new Date().getTime())/1000
-	}
-	
-	return parseInt(date);
+	//过滤html标签
+	global.removeTag=function(str) {
+	str = str.replace(/<\/?[^>]*>/g, ''); //去除HTML tag
+	str = str.replace(/[ | ]*\n/g, '\n'); //去除行尾空白
+	//str = str.replace(/\n[\s| | ]*\r/g,'\n'); //去除多余空行
+	str = str.replace(/ /ig, ''); //去掉 
+	return str;
 }
