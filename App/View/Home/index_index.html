@@ -1,63 +1,50 @@
 <!DOCTYPE html>
-<html lang="zh-cn">
-<%include header.html%>
-	<body class=" e-body">
-		<div class="container-layout e-content">
-			<div class="line-big">
-				<%include menu.html%>
-				<div class="xs6 xm9 bg" id="content">
-					<div class="margin-large" style="min-height: 700px;">
-						 <%list.data.forEach(function(data){%>
-						<div class="article">
-							<div class="article-meta">
-								<a href="<%=_web.url%>/page/<%=data.id%>.html" class="article-date">
-									<time datetime="2015-10-19T15:57:00.000Z" itemprop="datePublished">
-										<span class="padding-top"><%=data.d%></span>
-										<p class="text-small"><%=data.m%></p>
-									</time>
-								</a>
-								<ul class="list-unstyle heigh">
-									<li>
-										<i class="icon-tag"></i><a class="article-tag-list-link" href="<%=_web.url%>/tag/<%=data.tid%>"><%=data.tag%></a>
-									</li>
-								</ul>
-							</div>
-							<div class="article-inner">
-								<input class="isFancy" type="hidden">
-								<header class="article-header">
-									<h1 itemprop="name">
-            						<a class="article-title" href="<%=_web.url%>/page/<%=data.id%>.html"><%=data.title%> </a>
-          							</h1>
-								</header>
-								<div class="article-entry" itemprop="articleBody">
-									<p>
-										<%=data.abscontent%>
-									</p>
-									<p class="article-more-link">
-										<a href="<%=_web.url%>/page/<%=data.id%>.html" class="tag bg-gra e-tag">more &gt;&gt;</a>
-									</p>
-								</div>
-								<footer class="article-footer"> </footer>
-							</div>
-						</div>
-						<%})%>
-						<div class="margin-large">
-							<ul class="pager clearfix">
-								<%if(list.page>=1 && list.page<=list.total){%>
-								<%if(list.page>1){%>
-								<li class="float-left"><a class="pager-prev icon-angle-left" href="<%=_web.url%>/p/<%=list.page-1%>"></a></li> 
-								<%}%>
-								<%if(list.page<list.total){%>
-								<li class="float-right"><a class="pager-next icon-angle-right" href="<%=_web.url%>/p/<%=list.page+1%>"></a></li>
-								<%}%>
-								<%}%>
-							</ul>
-						</div>						
-					</div>
-					<%include footer.html%>
-				</div>
-			</div>
-		</div>
-	</body>
+<html class="">
+    <%include header.html%>
+    <body>
+        <div id="container">
+            <%include menu.html%>
+            <div class="mid-col">
+            <%include m_menu.html%>
 
-</html>
+            <%list.data.forEach(function(data){%>
+    <article id="post-douban-index-for-chrome" class="article article-type-post" itemscope="" itemprop="blogPost">
+      <div class="article-meta">
+        <a href="<%=_web.url%>page/<%=data.id%>.html" class="article-date">
+        <time datetime="2015-10-19T15:57:00.000Z" itemprop="datePublished"><%=data.d%> <%=data.m%></time>
+        </a>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="<%=_web.url%>tag/<%=data.tid%>"><%=data.tag%></a></li></ul>      </div>
+      <div class="article-inner">
+        <input class="isFancy" type="hidden">
+        <header class="article-header">
+          <h1 itemprop="name">
+            <a class="article-title" href="<%=_web.url%>page/<%=data.id%>.html"><%=data.title%> </a>
+          </h1>
+        </header>
+        <div class="article-entry" itemprop="articleBody">
+            <%=data.abscontent%>
+          <p class="article-more-link">
+            <a href="<%=_web.url%>page/<%=data.id%>.html">more &gt;&gt;</a>
+          </p>
+        </div>
+        <footer class="article-footer"> </footer>
+      </div>
+    </article>
+    <%})%>
+ 
+        <ul class="pager padding  clearfix margin-big"> 
+                <%if(list.page>=1 && list.page<=list.total){%>
+                <%if(list.page>1){%>        
+        <li class="float-left"> <a class="pager-prev icon-angle-left" href="<%=_web.url%>p/<%=list.page-1%>"></a> </li> 
+                <%}%>
+                <%if(list.page<list.total){%>        
+        <li class="float-right"> <a class="pager-next icon-angle-right" href="<%=_web.url%>p/<%=list.page+1%>"></a> </li>
+                <%}%>
+                <%}%>        
+        </ul>
+
+  <%include footer.html%>
+  
+  </div>
+</div>
+</body></html>

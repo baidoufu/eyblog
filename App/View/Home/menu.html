@@ -1,22 +1,47 @@
-				<div class="xs6 xm3 e-left" style="padding-left: unset;">
-					<div class="e-overlay"></div>
-					<div class="e-intrud">
-						<header class="e-inner">
-							<div class="profilepic">
-								<img src="<%=_web.url%>/resource/img/logos.png" width="128" height="128" class="img-border radius-circle swing-hover" />
-								<h1><a href="<%=_web.url%>"><%=_web.title%></a></h1>
-								<p class="padding-top text-gray icon-volume-up">
-									<%=newMood.mood%>
-								</p>
-								<button class="button icon-navicon" data-target="#nav-link1"></button>
-								<ul class="nav nav-navicon padding-large-top nav-menu e-nav" id="nav-link1">
-									<li><a href="<%=_web.url%>">首页</a></li>
-									<li><a href="<%=_web.url%>/mood">心情</a></li>
-									<li><a href="#">相册</a></li>
-									<li><a href="<%=_web.url%>/archives">归档</a></li>
-									<li><a href="<%=_web.url%>/about">关于</a></li>
-								</ul>
-							</div>
-						</header>
-					</div>
-				</div>
+            <div class="left-col">
+                <div class="overlay"></div>
+                <div class="intrude-less">
+                    <header id="header" class="inner">
+                        <div class="profilepic">
+                            <img src="<%=_web.url%>resource/img/logos.png">
+                        </div>
+                        <hgroup>
+                        <h1 class="header-author"><a href="<%=_web.url%>"><%=_web.title%></a></h1>
+                        </hgroup>
+                        <p class="header-subtitle"><%=newMood.mood%></p>
+                        <div class="onoffswitch">
+                            <input name="onoffswitch"  id="myonoffswitch" class="onoffswitch-checkbox" checked="checked" type="checkbox">
+                            <label class="onoffswitch-label" for="myonoffswitch">
+                                <span class="onoffswitch-inner"></span>
+                                <span class="onoffswitch-switch"></span>
+                            </label>
+                        </div>
+                        <div class="switch-area">
+                            <section class="first-part">
+                                <nav class="header-menu">
+                                    <ul>
+                                        <li>
+                                            <a class="current" href="<%=_web.url%>">首页</a>
+                                        </li>                                                             <li>
+                                            <a href="<%=_web.url%>mood">心情</a>
+                                        </li>
+                                         <li>
+                                            <a href="<%=_web.url%>archives">归档</a>
+                                        </li>
+                                        <li>
+                                            <a href="<%=_web.url%>about">关于</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </section>
+                            <section class="second-part">
+                                <div class="widget tagcloud">
+                                     <%tagList.forEach(function(data){%>
+                                    <a class="color1" style="font-size: 12px;" href="<%=_web.url%>tag/<%=data.id%>"><%=data.name%></a>
+                                    <%})%>
+                                </div>
+                            </section>
+                        </div>
+                    </header>
+                </div>
+            </div>

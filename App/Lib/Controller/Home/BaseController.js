@@ -10,6 +10,10 @@ module.exports = Controller(function(){
       D("Moods").getNew().then(function(data){
         self.assign("newMood",data);
       });
+      //标签
+      D("Tags").getList().then(function(data){
+        self.assign("tagList",data);
+      });      
     	//网站配置
     	D("Web").getOne().then(function(data){
     		self.assign("_web",data);

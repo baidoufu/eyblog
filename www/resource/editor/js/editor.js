@@ -171,7 +171,8 @@ $.extend($E, {
         }
 
         //去掉换行
-        var result = html.replace(/\n/mg, "");
+        //var result = html.replace(/\n/mg, "");
+        var result=html;
 
         //过滤单引号，双引号
         result = result.replace( /(<.*?>)|(')|(")/mg, function(a,b,c,d){ 
