@@ -5,6 +5,7 @@
 module.exports = Controller("Admin/BaseController", function(){
 	"use strict";
 	return{
+		//系统设置
 		indexAction:function(){
 			var self=this;
 			if(self.isGet()){
@@ -28,5 +29,16 @@ module.exports = Controller("Admin/BaseController", function(){
 				});
 			}
 		},
+		//访问限制
+		bannedAction:function(){
+			var self=this;
+			if(self.isGet()){
+				self.assign("model","system");
+				self.assign("action","banned");
+				self.display();
+			}else{
+
+			}
+		}
 	};
 });

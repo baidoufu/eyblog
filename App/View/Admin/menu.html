@@ -14,7 +14,7 @@
 
      <ul class="nav nav-inline admin-nav"> 
 
-      <li<%if(model=="index"){%> class="active"<%}%>> <a href="/admin/index" class="icon-home"> 开始 </a> 
+      <li <%if(model=="index"){%>class="active"<%}%>> <a href="/admin/index" class="icon-home"> 开始 </a> 
 
        <ul> 
 
@@ -31,27 +31,28 @@
 
        </ul> </li> 
 
-      <li<%if(model=="system"){%> class="active"<%}%>> <a href="/admin/system" class="icon-cog"> 系统 </a> 
+      <li <%if(model=="system"){%>class="active"<%}%>> <a href="/admin/system" class="icon-cog"> 系统 </a> 
 
        <ul> 
 
-        <li class="active"> <a href="/admin/system/index"> 系统设置 </a> </li> 
+        <li <%if(action=="index"){%>class="active"<%}%>> <a href="/admin/system/index"> 系统设置 </a> </li> 
+        <li <%if(action=="banned"){%>class="active"<%}%>> <a href="/admin/system/banned"> 访问限制 </a> </li>
 
        </ul> </li> 
 
-      <li<%if(model=="content"){%> class="active"<%}%>> <a href="/admin/content.html" class="icon-file-text"> 内容 </a> 
+      <li <%if(model=="content"){%>class="active"<%}%>> <a href="/admin/content.html" class="icon-file-text"> 内容 </a> 
 
        <ul> 
 
-        <li<%if(action=="add"){%> class="active"<%}%>> <a href="/admin/content/add"> 添加内容 </a> </li> 
+        <li <%if(action=="add"){%>class="active"<%}%>> <a href="/admin/content/add"> 添加内容 </a> </li> 
 
-        <li<%if(action=="index"){%> class="active"<%}%>> <a href="/admin/content"> 内容管理 </a> </li> 
+        <li <%if(action=="index"){%>class="active"<%}%>> <a href="/admin/content"> 内容管理 </a> </li> 
 
-        <li<%if(action=="mood"){%> class="active"<%}%>> <a href="/admin/content/mood"> 心情管理 </a> </li> 
+        <li <%if(action=="mood"){%>class="active"<%}%>> <a href="/admin/content/mood"> 心情管理 </a> </li> 
 
-        <li<%if(action=="cate"){%> class="active"<%}%>> <a href="/admin/content/cate"> 分类设置 </a> </li> 
+        <li <%if(action=="cate"){%>class="active"<%}%>> <a href="/admin/content/cate"> 分类设置 </a> </li> 
 
-        <li<%if(action=="tag"){%> class="active"<%}%>> <a href="/admin/content/tag"> 标签设置 </a> </li> 
+        <li <%if(action=="tag"){%>class="active"<%}%>> <a href="/admin/content/tag"> 标签设置 </a> </li> 
 
        </ul> </li> 
 
