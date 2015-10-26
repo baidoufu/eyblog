@@ -7,8 +7,6 @@
  		indexAction:function(){
  			var self=this;
  			self.assign("title","心情");
- 			var web=D('web').getOne();
- 			self.assign("_web",web);
  			//获取心情列表
  			var page=self.get('page')?self.get('page'):1;
  			var data=D("Moods").getList(page);

@@ -18,11 +18,9 @@ module.exports = Controller("Admin/BaseController", function(){
 				//留言
 				var comment=D('comments').getCount();
 				self.assign('comment',comment);
-				//PV
-				var pv=D('web').getPV();
-				self.assign('pv',pv);
 				//最新心情
-				var newmood=D('moods').getNew(1);										
+				var newmood=D('moods').getNew();
+				self.assign('newMood',newmood);										
 				self.display();
 			}
 		};

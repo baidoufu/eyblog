@@ -204,26 +204,3 @@ CREATE TABLE IF NOT EXISTS `ey_users` (
 
 INSERT INTO `ey_users` (`id`, `user`, `qq`, `weibo`, `email`, `brief`, `img`, `pass`) VALUES
 (1, 'admin', '5555555', 'weibo.com', 'admin@eyblog', '6的飞起', NULL, '8f9216fdfffc5728ec2332f3fd380312');
-
--- --------------------------------------------------------
-
---
--- 表的结构 `ey_web`
---
-
-CREATE TABLE IF NOT EXISTS `ey_web` (
-  `id` int(5) NOT NULL auto_increment,
-  `title` varchar(20) default NULL,
-  `keyword` varchar(200) default NULL,
-  `description` varchar(200) default NULL,
-  `pv` int(20) NOT NULL default '0',
-  `url` varchar(100) default NULL,
-  PRIMARY KEY  (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
-
---
--- 转存表中的数据 `ey_web`
---
-
-INSERT INTO `ey_web` (`id`, `title`, `keyword`, `description`, `pv`, `url`) VALUES
-(1, 'easyou', 'easyou', 'easyou大萌', 0, '');

@@ -10,9 +10,7 @@ module.exports = Controller("Admin/BaseController", function(){
 			if(self.isGet()){
 				self.assign("model","system");
 				self.assign("action","index");
-				D('web').getOne().then(function(){
-					self.display();
-				});				
+				self.display();			
 			}else{
 				var data={
 					title:self.post("title"),

@@ -22,13 +22,13 @@
 
        <img src="<%=_web.url%>/resource/img/logos.png" width="120" height="120" class="radius-circle" />
 
-       <br /> admin 
+       <br /> <%=userInfo.user%>
 
       </div> 
 
       <div class="panel-foot bg-back border-back">
 
-        您好，admin，这是您第100次登录，上次登录为2014-10-1。 
+        <%=newMood.mood%> 
 
       </div> 
 
@@ -52,7 +52,7 @@
 
        <li> <span class="float-right badge bg-main"> <%=comment%> </span> <span class="icon-file-text"> </span>留言 </li> 
 
-       <li> <span class="float-right badge bg-main"> <%=pv%> </span> <span class="icon-database"> </span>访问 </li> 
+       <li> <span class="float-right badge bg-main"> <%=_web.pv%> </span> <span class="icon-database"> </span>访问 </li> 
 
       </ul> 
 

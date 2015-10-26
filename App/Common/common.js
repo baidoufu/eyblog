@@ -69,3 +69,20 @@ global.subStr = function(str, len, hasDot) {
 	str = str.replace(/ /ig, ''); //去掉 
 	return str;
 }
+	//读取文件
+	global.readFile=function(file){
+		var fs = thinkRequire('fs'); //引入fs处理文件
+		var data = fs.readFileSync(file);
+		return data;
+	}
+	//写入文件
+	global.writeFile=function(file,data,fn){
+		var fs = thinkRequire('fs'); //引入fs处理文件
+		fs.writeFile(file,data,function(err){
+			if(err){
+				fn(false);
+			}else{
+				fn(true);
+			}
+		});
+	}

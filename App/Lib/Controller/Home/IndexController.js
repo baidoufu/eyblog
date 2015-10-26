@@ -71,13 +71,12 @@ module.exports = Controller("Home/BaseController", function() {
 		},
 		//登录
 		loginAction: function() {
-			var self = this;
+			var self = this;		
 			//处理
 			if (self.isGet()) {
 				self.assign('title', "登录到后台");
-				D('web').getOne().then(function() {
-					return self.display();
-				});
+				self.getConfig();
+				return self.display();
 			} else {
 				var map = {
 					user: self.post('user'),
@@ -104,9 +103,9 @@ module.exports = Controller("Home/BaseController", function() {
 		errorAction:function(){
 			var self=this;
 			self.assign("title","404");
-			D('web').getOne().then(function() {
-				return self.display();
-			});			
+			D('Tags').getList().then(function(){
+				return self.display();		
+			});	
 		}
 	};
 });

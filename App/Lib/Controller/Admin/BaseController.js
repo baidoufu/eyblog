@@ -9,9 +9,9 @@ module.exports = Controller(function() {
 			self.super("init", http);
 			self.assign("title", "后台管理");
 			//网站配置
-			D('web').getOne().then(function(data) {
-				self.assign("_web", data);
-			});
+	        var data = readFile(CONF_PATH + "/config.json");
+	        data = JSON.parse(data);
+	        self.assign("_web", data);
 			//判断是否登录
 			return self.session("userInfo").then(function(data) {
 				if (isEmpty(data)) {

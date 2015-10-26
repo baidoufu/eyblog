@@ -17,7 +17,6 @@ module.exports = Model(function() {
                         data['data'][k]['m'] = formatDate("m", data['data'][k]['time']);
                         data['data'][k]['d'] = formatDate("d", data['data'][k]['time']);                        
                         data['data'][k]['time'] = formatDate("y-m-d h:i:s", data['data'][k]['time']);
-                        console.log(data)
                     }
                     return data;
                 });
