@@ -4,8 +4,10 @@
 module.exports = Controller(function() {
   'use strict';
   return {
-    init: function(http) { //初始化
+    //初始化
+    init: function(http) {
       var self = this;
+      self.super("init", http);
       //最新心情
       var mood = D("Moods").getNew().then(function(data) {
         self.assign("newMood", data);
@@ -15,17 +17,17 @@ module.exports = Controller(function() {
         self.assign("tagList", data);
 
       });
-      Promise.all([mood, tag]).then(function() {
+      //返回一个 promise。后续操作在此之后执行
+      return Promise.all([mood, tag]).then(function() {
         self.getConfig();
       });
-      self.super("init", http);
     },
-    getConfig:function(){
-      var self=this;
-        //获取配置
-        var data = readFile(CONF_PATH + "/config.json");
-        data = JSON.parse(data);
-        self.assign("_web", data);      
+    //获取配置
+    getConfig: function() {
+      var self = this;
+      var data = readFile(CONF_PATH + "/config.json");
+      data = JSON.parse(data);
+      self.assign("_web", data);
     }
   }
 })

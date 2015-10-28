@@ -12,7 +12,13 @@
         <a href="<%=_web.url%>page/<%=data.id%>.html" class="article-date">
         <time datetime="2015-10-19T15:57:00.000Z" itemprop="datePublished"><%=data.d%> <%=data.m%></time>
         </a>
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="<%=_web.url%>tag/<%=data.tid%>"><%=data.tag%></a></li></ul>      </div>
+        <ul class="article-tag-list">
+        <li class="article-tag-list-item">
+            <a class="article-tag-list-link" href="<%=_web.url%>tag/<%=data.tid%>"><%=data.tag%></a>
+        </li>       
+        </ul>     
+
+         </div>
       <div class="article-inner">
         <input class="isFancy" type="hidden">
         <header class="article-header">

@@ -75,7 +75,6 @@ module.exports = Controller("Home/BaseController", function() {
 			//处理
 			if (self.isGet()) {
 				self.assign('title', "登录到后台");
-				self.getConfig();
 				return self.display();
 			} else {
 				var map = {
@@ -103,9 +102,7 @@ module.exports = Controller("Home/BaseController", function() {
 		errorAction:function(){
 			var self=this;
 			self.assign("title","404");
-			D('Tags').getList().then(function(){
-				return self.display();		
-			});	
+			return self.display();		
 		}
 	};
 });
