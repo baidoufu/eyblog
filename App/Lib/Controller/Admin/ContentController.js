@@ -45,7 +45,6 @@ module.exports = Controller("Admin/BaseController", function(){
 				data.abscontent=subStr(removeTag(self.post('content')),200);
 				data.status=self.post('status')||0;
 				data.iscomment=self.post('iscomment')||0;
-				data.time=time();
 				console.log(data);
 				return self.session('userInfo').then(function(user){
 					data.uid=user.id;
@@ -53,6 +52,7 @@ module.exports = Controller("Admin/BaseController", function(){
 						//编辑
 						var rs=D('Contents').where({id:self.post('id')}).update(data);
 					}else{
+						data.time=time();
 						//新增
 						var rs=D('Contents').add(data);
 					}
