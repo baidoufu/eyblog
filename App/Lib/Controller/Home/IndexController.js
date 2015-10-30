@@ -56,7 +56,7 @@ module.exports = Controller("Home/BaseController", function() {
 			var self = this;
 			self.assign("title","归档");
 			return D("Contents")
-				.where("ispage=1")
+				.where("ispage=1 AND status=1")
 				.field("id,title,time,view")
 				.order("time desc")
 				.select()
