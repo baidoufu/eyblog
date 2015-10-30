@@ -57,7 +57,7 @@ module.exports = Controller("Home/BaseController", function() {
 			self.assign("title","归档");
 			return D("Contents")
 				.where("ispage=1")
-				.field("id,title,time")
+				.field("id,title,time,view")
 				.order("time desc")
 				.select()
 				.then(function(data) {
