@@ -1,5 +1,6 @@
 {
   "name": "easyou-node",
+<<<<<<< HEAD
   "description": "easyou",
   "version": "0.1.0",
   "author": "dameng",
@@ -7,12 +8,29 @@
     "thinkjs": "1.2.x"
   },
   "keywords": "easyou,nodejs",
+=======
+  "description": "simple blog created by thinkjs",
+  "version": "0.1.0",
+  "author": {
+    "author1": "dameng",
+    "author2": "rccoder"
+    },
+  "scripts": {
+    "start": "node ./www/index.js"
+    },
+  "dependencies": {
+    "thinkjs": "^1.2.10"
+  },
+  "keywords": [
+    "easyou-node"
+  ],
+>>>>>>> 39e1f36c6e68257673e6e4987dd50c188f72dc80
   "repository": {
     "type": "git",
     "url": "https://github.com/eyblog/easyou-node"
   },
   "engines": {
-    "node": ">=0.10.0"
+    "node": ">=0.12.0"
   },
   "readmeFilename": "README.md"
 }
