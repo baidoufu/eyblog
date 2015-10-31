@@ -6,4 +6,3 @@ output/
 output.tar.gz
 sftp-config.json
 www/resource/upload
-.gitignore
