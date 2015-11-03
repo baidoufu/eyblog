@@ -86,3 +86,7 @@ global.subStr = function(str, len, hasDot) {
 			}
 		});
 	}
+	//去掉首尾空格
+	global.trimStr=function (str){
+		return str.replace(/(^\s*)|(\s*$)/g,"");
+	}	

@@ -18,7 +18,9 @@ module.exports = Controller("Admin/BaseController", function(){
 					title:self.post("title"),
 					keyword:self.post("keyword"),
 					description:self.post("description"),
-					url:self.post("url")
+					url:self.post("url"),
+					copyright:trimStr(self.post('copyright')),
+					linkurl:trimStr(self.post('linkurl'))
 				}
 				writeFile(CONF_PATH + "/config.json",JSON.stringify(data),function(rs){
 					if(rs){	//成功

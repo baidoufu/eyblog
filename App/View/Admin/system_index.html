@@ -48,6 +48,18 @@
                         value="<%=_web['description']%>" />
                     </div>
                 </div>
+                <div class="form-group">
+                    <div class="label"><label for="readme">底部版权</label></div>
+                    <div class="field">
+                            <textarea class="input" name="copyright" rows="5" cols="50" placeholder="请填写底部版权" data-validate="required:请填写底部版权"><%=_web['copyright']%></textarea>
+                    </div>
+                </div> 
+                <div class="form-group">
+                    <div class="label"><label for="readme">友情链接</label></div>
+                    <div class="field">
+                                <textarea class="input" name="linkurl" rows="5" cols="50" placeholder="请填写友情链接" data-validate="required:请填写友情链接"><%=_web['linkurl']%></textarea>
+                    </div>
+                </div>                                
                 <div class="form-button"><button class="button bg-main" type="submit">提交</button></div>
             </form>
         </div>
