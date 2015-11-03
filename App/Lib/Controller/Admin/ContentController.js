@@ -42,8 +42,9 @@ module.exports = Controller("Admin/BaseController", function(){
 				data.cid=self.post('category');
 				data.tid=self.post('tag');
 				data.text=self.post('content');
-				data.abscontent=subStr(removeTag(self.post('content')),200);
+				data.abscontent=subStr(removeTag(self.post('content')),400);
 				data.status=self.post('status')||0;
+				data.ispage=1;
 				data.iscomment=self.post('iscomment')||0;
 				console.log(data);
 				return self.session('userInfo').then(function(user){
