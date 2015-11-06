@@ -79,30 +79,17 @@
   </table> 
 
   <div class="panel-foot text-center"> 
+  
+   <ul class="pagination  border-main">
+   <% 
+   if(list.total>1){
+   for(var i=1;i<list.total+1;i++){%>
+   <li <%if(list.page==i){%>class="active" style="background: #0AE;"<%}%>>
+        <a href="/admin/content/index/p/<%=i%>"><%=i%></a>
+    </li>
+   <%}}%>
+   </ul>
 
-   <%if(list.page>0 && list.page<=list.total){%>
-
-   <%if(list.page>1 && list.page<=list.total){%>
-
-   <ul class="pagination"> 
-
-     <li> <a href="/admin/content/index/p/<%=list.page-1%>"> 上一页 </a> </li> 
-
-   </ul> 
-
-   <%}%>
-
-   <%if(list.page>0 && list.page<list.total){%>
-
-   <ul class="pagination"> 
-
-     <li> <a href="/admin/content/index/p/<%=list.page+1%>"> 下一页 </a> </li> 
-
-   </ul> 
-
-   <%}%>
-
-   <%}%>
 
  </div> 
 
