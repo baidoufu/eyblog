@@ -91,3 +91,13 @@ global.subStr = function(str, len, hasDot) {
 	global.trimStr=function (str){
 		return str.replace(/(^\s*)|(\s*$)/g,"");
 	}	
+	//判断是否为数字
+	global.isNum=function (s){
+	    if(s!=null){
+	        var r,re;
+	        re = /\d*/i; //\d表示数字,*表示匹配多个数字
+	        r = s.match(re);
+	        return (r==s)?true:false;
+	    }
+	    return false;
+	}	

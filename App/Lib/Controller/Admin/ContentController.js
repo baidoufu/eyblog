@@ -46,6 +46,7 @@ module.exports = Controller("Admin/BaseController", function(){
 				data.status=self.post('status')||0;
 				data.ispage=1;
 				data.iscomment=self.post('iscomment')||0;
+				data.url=self.post('url');
 				console.log(data);
 				return self.session('userInfo').then(function(user){
 					data.uid=user.id;

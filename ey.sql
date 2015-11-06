@@ -1,4 +1,11 @@
-
+-- phpMyAdmin SQL Dump
+-- version 3.3.7
+-- http://www.phpmyadmin.net
+--
+-- 主机: localhost
+-- 生成日期: 2015 年 11 月 06 日 06:40
+-- 服务器版本: 5.0.90
+-- PHP 版本: 5.2.14
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 
@@ -68,6 +75,7 @@ CREATE TABLE IF NOT EXISTS `ey_comments` (
 CREATE TABLE IF NOT EXISTS `ey_contents` (
   `id` int(10) NOT NULL auto_increment,
   `title` varchar(50) default NULL,
+  `url` varchar(20) default NULL,
   `uid` int(3) default '1',
   `abscontent` text,
   `text` text,
@@ -85,12 +93,12 @@ CREATE TABLE IF NOT EXISTS `ey_contents` (
 -- 转存表中的数据 `ey_contents`
 --
 
-INSERT INTO `ey_contents` (`id`, `title`, `uid`, `abscontent`, `text`, `time`, `tid`, `cid`, `ispage`, `iscomment`, `status`, `view`) VALUES
-(1, '关于', 1, '\n	\n		\n			easyou 1.0\n		\n		\n			easyou是一个简单的博客，没有复杂的功能。从一开始它的定位就是简单和速度。\n                                放弃了许多华而不实的东', '<p>\n	<div id="collapse-panel-2" class="am-panel-bd am-in">\n		<p class="am-text-success am-serif">\n			easyou 1.0\n		</p>\n		<p class="am-text-success am-serif">\n			easyou是一个简单的博客，没有复杂的功能。从一开始它的定位就是简单和速度。\n                                放弃了许多华而不实的东西。从开始到结束，都没有忘记它是一个博客，而非CMS。\n		</p>\n		<p class="am-text-success am-serif">\n			如果您想使用好它，可能需要一点点HTML知识。相信我。仅仅是一点点。\n                                多学一点，总是没有坏处的。\n		</p>\n		<p class="am-text-success am-serif">\n			easyou是由<a target="_blank" href="http://document.thinkphp.cn/manual_3_2.html">thinkPHP</a> 和<a target="_blank" href="http://amazeui.org/css/">amazeUI</a>的支持下完成的。如果您想要对它进行修改，请点击上面的链接来熟悉他们！\n		</p>\n		<p class="am-text-success monospace">\n			2015-06-30 大萌\n		</p>\n	</div>\n</p>', 1423889668, 1, 2, 2, 2, 1, 6),
-(2, '留言', 1, '留点什么吧~', '留点什么吧~', 1423892271, 1, 2, 2, 1, 1, 4),
-(3, '恭喜您：安装成功', 1, '	恭喜您：安装成功	恭喜您：安装成功	恭喜您：安装成功	恭喜您：安装成功	恭喜您：安装成功	恭喜您：安装成功	恭喜您：安装成功	恭喜您：安装成功', '<p>	<span style="background-color: rgb(0, 128, 0);">恭喜您：安装成功</span></p><p>	恭喜您：安装成功</p><p>	恭喜您：安装成功</p><p>	恭喜您：安装成功</p><p>	恭喜您：安装成功</p><p>	恭喜您：安装成功</p><p>	恭喜您：安装成功</p><p>	恭喜您：安装成功</p>', 1445418551, 2, 3, 1, 1, 1, 0),
-(8, '屠呦呦与黄晓明碰撞之我见', 1, '	近来最热的话题莫过于屠呦呦获得诺贝尔奖和黄晓明结婚了。没有做到退朋友圈保智商的的我理所当然又看到一些什么一生努力不抵一场秀，屠呦呦PK黄晓明的一些论调。以往都是笑而不见。然而刚刚发现有位我一直认为很有', '<blockquote style="display:block; border-left: 5px solid #d0e5f2; padding:0 0 0 10px; margin:0; line-height:1.4; font-size: 100%;"><p>	<span style="font-size:12px;">近来最热的话题莫过于</span><span style="color:#000000;"><span style="font-size:12px;">屠呦呦获得诺贝尔奖和黄晓明结婚了。没有做到退朋友圈保智商的的我理所当然又看到一些什么一生努力不抵一场秀，</span><span style="color:#000000;font-size:12px;">屠呦呦</span><span style="font-size:12px;">PK</span><span style="color:#000000;font-size:12px;">黄晓明</span><span style="font-size:12px;">的一些论调。以往都是笑而不见。然而刚刚发现有位我一直认为很有深度的朋友居然也转载了。心情激愤，故而浅谈几句。</span></span> </p></blockquote><p>	<br><span style="color:#000000;"></span> </p><p>	<span style="color:#000000;font-size:12px;">两件完全不搭边的事情为什么会产生碰撞，无非一下几个原因。</span></p><p><br><span style="color:#000000;font-size:12px;"></span></p><pre><code class="javascript hljs"><span class="hljs-keyword">var</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#39;path&#39;</span>);<span class="hljs-comment">//定义APP的根目录</span>global.APP_PATH = path.dirname(__dirname) + <span class="hljs-string">&#39;/App&#39;</span>;<span class="hljs-comment">//静态资源根目录</span>global.RESOURCE_PATH = __dirname;<span class="hljs-comment">//网站根目录</span>global.ROOT_PATH = __dirname;<span class="hljs-comment">//开启调试模式，线上环境需要关闭调试功能</span>global.APP_DEBUG = <span class="hljs-literal">true</span>;<span class="hljs-comment">//加载thinkjs启动服务</span><span class="hljs-built_in">require</span>(<span class="hljs-string">&#39;thinkjs&#39;</span>);</code></pre><p><span style="color:#000000;font-size:12px;"></span> </p>', 1445418609, 1, 2, 1, 1, 1, 0),
-(9, '关注微信送红包', 1, '', '<p><img src="/resource/upload/e0fab4238fa82b5371fdf0dd54007448.png"><img src="/resource/upload/e0fab4238fa82b5371fdf0dd54007448.png"></p>', 1445419008, 1, 2, 1, 1, 1, 0);
+INSERT INTO `ey_contents` (`id`, `title`, `url`, `uid`, `abscontent`, `text`, `time`, `tid`, `cid`, `ispage`, `iscomment`, `status`, `view`) VALUES
+(1, '关于', NULL, 1, '\n	\n		\n			easyou 1.0\n		\n		\n			easyou是一个简单的博客，没有复杂的功能。从一开始它的定位就是简单和速度。\n                                放弃了许多华而不实的东', '<p>\n	<div id="collapse-panel-2" class="am-panel-bd am-in">\n		<p class="am-text-success am-serif">\n			easyou 1.0\n		</p>\n		<p class="am-text-success am-serif">\n			easyou是一个简单的博客，没有复杂的功能。从一开始它的定位就是简单和速度。\n                                放弃了许多华而不实的东西。从开始到结束，都没有忘记它是一个博客，而非CMS。\n		</p>\n		<p class="am-text-success am-serif">\n			如果您想使用好它，可能需要一点点HTML知识。相信我。仅仅是一点点。\n                                多学一点，总是没有坏处的。\n		</p>\n		<p class="am-text-success am-serif">\n			easyou是由<a target="_blank" href="http://document.thinkphp.cn/manual_3_2.html">thinkPHP</a> 和<a target="_blank" href="http://amazeui.org/css/">amazeUI</a>的支持下完成的。如果您想要对它进行修改，请点击上面的链接来熟悉他们！\n		</p>\n		<p class="am-text-success monospace">\n			2015-06-30 大萌\n		</p>\n	</div>\n</p>', 1423889668, 1, 2, 2, 2, 1, 16),
+(2, '留言', NULL, 1, '留点什么吧~', '留点什么吧~', 1423892271, 1, 2, 2, 1, 1, 21),
+(3, '恭喜您：安装成功', NULL, 1, '	恭喜您：安装成功	恭喜您：安装成功	恭喜您：安装成功	恭喜您：安装成功	恭喜您：安装成功	恭喜您：安装成功	恭喜您：安装成功	恭喜您：安装成功', '<p>	<span style="background-color: rgb(0, 128, 0);">恭喜您：安装成功</span></p><p>	恭喜您：安装成功</p><p>	恭喜您：安装成功</p><p>	恭喜您：安装成功</p><p>	恭喜您：安装成功</p><p>	恭喜您：安装成功</p><p>	恭喜您：安装成功</p><p>	恭喜您：安装成功</p>', 1445418551, 2, 3, 1, 1, 1, 1),
+(8, '屠呦呦与黄晓明碰撞之我见', NULL, 1, '	近来最热的话题莫过于屠呦呦获得诺贝尔奖和黄晓明结婚了。没有做到退朋友圈保智商的的我理所当然又看到一些什么一生努力不抵一场秀，屠呦呦PK黄晓明的一些论调。以往都是笑而不见。然而刚刚发现有位我一直认为很有', '<blockquote style="display:block; border-left: 5px solid #d0e5f2; padding:0 0 0 10px; margin:0; line-height:1.4; font-size: 100%;"><p>	<span style="font-size:12px;">近来最热的话题莫过于</span><span style="color:#000000;"><span style="font-size:12px;">屠呦呦获得诺贝尔奖和黄晓明结婚了。没有做到退朋友圈保智商的的我理所当然又看到一些什么一生努力不抵一场秀，</span><span style="color:#000000;font-size:12px;">屠呦呦</span><span style="font-size:12px;">PK</span><span style="color:#000000;font-size:12px;">黄晓明</span><span style="font-size:12px;">的一些论调。以往都是笑而不见。然而刚刚发现有位我一直认为很有深度的朋友居然也转载了。心情激愤，故而浅谈几句。</span></span> </p></blockquote><p>	<br><span style="color:#000000;"></span> </p><p>	<span style="color:#000000;font-size:12px;">两件完全不搭边的事情为什么会产生碰撞，无非一下几个原因。</span></p><p><br><span style="color:#000000;font-size:12px;"></span></p><pre><code class="javascript hljs"><span class="hljs-keyword">var</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#39;path&#39;</span>);<span class="hljs-comment">//定义APP的根目录</span>global.APP_PATH = path.dirname(__dirname) + <span class="hljs-string">&#39;/App&#39;</span>;<span class="hljs-comment">//静态资源根目录</span>global.RESOURCE_PATH = __dirname;<span class="hljs-comment">//网站根目录</span>global.ROOT_PATH = __dirname;<span class="hljs-comment">//开启调试模式，线上环境需要关闭调试功能</span>global.APP_DEBUG = <span class="hljs-literal">true</span>;<span class="hljs-comment">//加载thinkjs启动服务</span><span class="hljs-built_in">require</span>(<span class="hljs-string">&#39;thinkjs&#39;</span>);</code></pre><p><span style="color:#000000;font-size:12px;"></span> </p>', 1445418609, 1, 2, 1, 1, 1, 5),
+(9, '关注微信送红包', 'weixin', 1, '&lt;divclass=&quot;bjui-pageFooter&quot;&gt;	&lt;divclass=&quot;pages&quot;&gt;		&lt;span&gt;每页&amp;nbsp;&lt;/span&gt;		&lt;divclass=&quot;selectPagesize&quot;&gt;			&lt;selectdata-toggle=&quot;selectpicker&quot;data-toggle-change=&quot;changepagesize&quot;&gt;				{foreachfrom=$pagesizesitem=v}				&lt;optionvalue=&quot;{$v}&quot;&gt;{$v}&lt;/option&gt;				{/foreach}			&lt;/select&gt;		&lt;/div&g', '<pre><code class="javascript hljs">&lt;div <span class="hljs-class"><span class="hljs-keyword">class</span></span>=<span class="hljs-string">&quot;bjui-pageFooter&quot;</span>&gt;	<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;pages&quot;</span>&gt;</span>		<span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span>每页&amp;nbsp;<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>		<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;selectPagesize&quot;</span>&gt;</span>			<span class="hljs-tag">&lt;<span class="hljs-title">select</span> <span class="hljs-attribute">data-toggle</span>=<span class="hljs-value">&quot;selectpicker&quot;</span> <span class="hljs-attribute">data-toggle-change</span>=<span class="hljs-value">&quot;changepagesize&quot;</span>&gt;</span>				{foreach from=$pagesizes item=v}				<span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">&quot;{$v}&quot;</span>&gt;</span>{$v}<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>				{/foreach}			<span class="hljs-tag">&lt;/<span class="hljs-title">select</span>&gt;</span>		<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>		<span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span>&amp;nbsp;条，共 {$total} 条<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>	<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>	<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;pagination-box&quot;</span> <span class="hljs-attribute">data-toggle</span>=<span class="hljs-value">&quot;pagination&quot;</span> <span class="hljs-attribute">data-total</span>=<span class="hljs-value">&quot;{$total}&quot;</span> <span class="hljs-attribute">data-page-size</span>=<span class="hljs-value">&quot;{$pagesize}&quot;</span> <span class="hljs-attribute">data-page-current</span>=<span class="hljs-value">&quot;{$pageCurrent}&quot;</span>&gt;</span>	<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></span></code></pre>', 1445664127, 1, 2, 1, 1, 1, 47);
 
 -- --------------------------------------------------------
 
@@ -204,3 +212,22 @@ CREATE TABLE IF NOT EXISTS `ey_users` (
 
 INSERT INTO `ey_users` (`id`, `user`, `qq`, `weibo`, `email`, `brief`, `img`, `pass`) VALUES
 (1, 'admin', '5555555', 'weibo.com', 'admin@eyblog', '6的飞起', NULL, '8f9216fdfffc5728ec2332f3fd380312');
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `ey_visitor`
+--
+
+CREATE TABLE IF NOT EXISTS `ey_visitor` (
+  `id` int(10) NOT NULL auto_increment,
+  `time` int(10) NOT NULL,
+  `ip` varchar(12) NOT NULL,
+  `count` int(10) NOT NULL default '0',
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+--
+-- 转存表中的数据 `ey_visitor`
+--
+

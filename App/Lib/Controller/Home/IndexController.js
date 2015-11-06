@@ -37,11 +37,12 @@ module.exports = Controller("Home/BaseController", function() {
 		//文章详情页
 		pageAction: function() {
 			var self = this;
-			var map = {
-				'ey_contents.id': self.get('id'),
-				//ispage:1,
-				status: 1,
-			};
+			var map={status: 1};
+			if(isNum(self.get('id'))){
+				map={'ey_contents.id': self.get('id')};
+			}else{
+				map={'ey_contents.url': self.get('id')};
+			}
 			var data = D('Contents').getOne(map).then(function(rs) {
 				self.assign("title", rs.title); //页面标题
 				return rs;
@@ -57,13 +58,17 @@ module.exports = Controller("Home/BaseController", function() {
 			self.assign("title","归档");
 			return D("Contents")
 				.where("ispage=1 AND status=1")
-				.field("id,title,time,view")
+				.field("id,title,time,view,url")
 				.order("time desc")
 				.select()
 				.then(function(data) {
                     //日期处理
                     for (var k in data) {
                         data[k]['time'] = formatDate("y-m-d h:i:s", data[k]['time']);
+                        //自定义url处理
+                        if(!isEmpty(data[k]['url'])){
+                            data[k]['id']=data[k]['url'];
+                        }                        
                     }					
 					self.assign("data", data);
 					self.display();

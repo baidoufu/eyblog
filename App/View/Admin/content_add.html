@@ -37,6 +37,18 @@
 
                 <div class="form-group">
 
+                    <div class="label"><label for="sitename">url静态化</label></div>
+
+                    <div class="field">
+
+                      <input type="text" class="input" id="url" name="url" size="50" placeholder="不填写则使用文章id，不能为数字"  value="<%=content.url%>" />
+
+                    </div>
+
+                </div>                
+
+                <div class="form-group">
+
                     <div class="label"><label for="sitename">所属分类</label></div>
 
                     <div class="field">
@@ -81,7 +93,7 @@
 
                     <div class="field">
 
-                      <textarea class="input" name="content" id="content" rows="10" cols="50" placeholder="文章内容">
+                      <textarea style="height: 380px;" class="input" name="content" id="content" rows="10" cols="50" placeholder="文章内容">
                         <%=content.text%>
                       </textarea>
 
